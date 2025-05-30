@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+<!-- To instead change the duration/cooldown
+<Operation Class="PatchOperationConditional">
+    <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]</xpath>
+    <match Class="PatchOperationReplace">
+        <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/statBases</xpath>
+        <value>
+            <statBases>
+                <Ability_Duration>60000</Ability_Duration>
+            </statBases>
+        </value>
+    </match>    
+</Operation>        
+
+
+<Operation Class="PatchOperationConditional">
+<xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/cooldownTicksRange</xpath>
+    <match Class="PatchOperationReplace">
+        <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/cooldownTicksRange</xpath>    
+        <value>
+            <cooldownTicksRange>1</cooldownTicksRange> 
+        </value>
+        
+    </match>   
+
+    <!-    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicInvisibility</hediffDef>
+        <psychic>True</psychic> 
+</Operation> 
+-->
+
+<!-- The actual place for replacing invisibility to sightstealer invisibility--> 
+<Operation Class="PatchOperationConditional">
+<xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/comps</xpath>
+    <match Class="PatchOperationReplace">
+        <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/comps</xpath>    
+        <value>
+            <comps>
+                <li Class="CompProperties_AbilityGiveHediff">
+                    <compClass>CompAbilityEffect_GiveHediff</compClass>
+                    <hediffDef>HoraxianInvisibility</hediffDef>
+                    <psychic>True</psychic>
+                </li>
+            </comps>
+        </value>
+        
+    </match>   
+</Operation>
+
+<!--
+            <showToggleGizmo>true</showToggleGizmo>
+            <canBeActivityDeactivated>true</canBeActivityDeactivated>
+            <ToggleAbilitytOff>Change to normal light</ToggleAbilitytOff>
+            <ToggleAbilityOffDesc>Change the light color to its normal color.</ToggleAbilityOffDesc>
+            <ToggleAbilityOn>Change to darklight</ToggleAbilityOn>
+            <ToggleAbilityOnDesc>Change the light color to darklight.</ToggleAbilityOnDesc>
+-->
+</Patch>

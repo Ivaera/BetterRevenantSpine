@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <!-- Required tags-->
+    <packageId>ivaera.BetterRevenantSpine</packageId>
+    <name>Better Revenant Spine</name>
+    <author>Ivaera</author>
+    <description>Buff the Revenant Spine, because 15 seconds isnt good enough</description>
+    <supportedVersions>
+        <li>1.5</li>
+    </supportedVersions>
+    <!-- Options tags-->
+    <modVersion>1.0</modVersion>
+
+</ModMetaData>
