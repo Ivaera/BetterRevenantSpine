@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Toggle OFF create toggle off ability -->
+<Defs>
+    <AbilityDef>
+        <defName>RevenantInvisibilityOFF</defName>
+        <label>revenant invisibility OFF</label>
+        <description>Use the revenant vertebrae to turn visible.</description>
+        <iconPath>UI/Abilities/RevenantInvisibility</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <hotKey>Misc12</hotKey>
+        <targetRequired>false</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <requireLineOfSight>false</requireLineOfSight>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <warmupTime>1</warmupTime>
+            <range>19.9</range>
+            <targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityRemoveHediff">
+                <compClass>CompAbilityEffect_RemoveHediff</compClass>
+                <hediffDef>HoraxianInvisibility</hediffDef>
+                <psychic>True</psychic>
+                <applyToSelf>true</applyToSelf>
+                <applyToTarget>true</applyToTarget>
+            </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>

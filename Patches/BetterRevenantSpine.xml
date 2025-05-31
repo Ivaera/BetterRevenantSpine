@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-<!-- To instead change the duration/cooldown
+<!-- To remove duration
 <Operation Class="PatchOperationConditional">
     <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]</xpath>
-    <match Class="PatchOperationReplace">
+    <match Class="PatchOperationRemove">
         <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/statBases</xpath>
         <value>
             <statBases>
-                <Ability_Duration>60000</Ability_Duration>
+                <Ability_Duration>15</Ability_Duration>
             </statBases>
         </value>
     </match>    
 </Operation>        
-
-
+-->
+<!--Reduce Cooldown to 1 tick-->
 <Operation Class="PatchOperationConditional">
 <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/cooldownTicksRange</xpath>
     <match Class="PatchOperationReplace">
@@ -22,18 +22,11 @@
         <value>
             <cooldownTicksRange>1</cooldownTicksRange> 
         </value>
-        
     </match>   
-
-    <!-    <comps>
-      <li Class="CompProperties_AbilityGiveHediff">
-        <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>PsychicInvisibility</hediffDef>
-        <psychic>True</psychic> 
 </Operation> 
--->
 
-<!-- The actual place for replacing invisibility to sightstealer invisibility--> 
+
+<!-- The toggle ON actual place for replacing invisibility to sightstealer invisibility--> 
 <Operation Class="PatchOperationConditional">
 <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/comps</xpath>
     <match Class="PatchOperationReplace">
@@ -47,10 +40,21 @@
                 </li>
             </comps>
         </value>
-        
     </match>   
 </Operation>
 
+
+<!-- Give toggle off to Revenant Vertebrae -->
+<Operation Class="PatchOperationConditional">
+<xpath>/Defs/HediffDef[defName="RevenantVertebrae"]/abilities</xpath>
+    <match Class="PatchOperationAdd">
+        <xpath>/Defs/HediffDef[defName="RevenantVertebrae"]/abilities</xpath>    
+        <value>
+            <li>RevenantInvisibilityOFF</li>
+        </value>
+        
+    </match>   
+</Operation>
 <!--
             <showToggleGizmo>true</showToggleGizmo>
             <canBeActivityDeactivated>true</canBeActivityDeactivated>
