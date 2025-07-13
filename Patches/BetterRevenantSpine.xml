@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-<!-- To remove duration
+<!-- To remove duration -->
 <Operation Class="PatchOperationConditional">
-    <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]</xpath>
+    <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/statBases</xpath>
     <match Class="PatchOperationRemove">
         <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/statBases</xpath>
-        <value>
-            <statBases>
-                <Ability_Duration>15</Ability_Duration>
-            </statBases>
-        </value>
     </match>    
-</Operation>        
--->
+</Operation>      
+
 <!--Reduce Cooldown to 1 tick-->
 <Operation Class="PatchOperationConditional">
 <xpath>/Defs/AbilityDef[defName="RevenantInvisibility"]/cooldownTicksRange</xpath>
