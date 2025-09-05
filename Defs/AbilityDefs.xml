@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Toggle OFF create toggle off ability -->
+<!--Toggle OFF create toggle off ability \\\ useless after update to same gizmo 1.2 -->
 <Defs>
+  <!-- 
     <AbilityDef>
         <defName>RevenantInvisibilityOFF</defName>
         <label>revenant invisibility OFF</label>
@@ -34,5 +35,6 @@
                 <fleckDef>PsycastPsychicEffect</fleckDef>
             </li>
         </comps>
-    </AbilityDef>
+    </AbilityDef>-->
 </Defs>
+  
