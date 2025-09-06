@@ -11,9 +11,7 @@ Safe to add to existing save, just reinstall the spine
 Probably **not** safe to remove from existing save
 
 
-This is made in XML only
+This is made in XML and C#
 
 **Credits**
 Veltaris to help me debug
-
-i'm looking to find a way to get it to be an on/off toggle
